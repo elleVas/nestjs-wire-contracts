@@ -1,7 +1,7 @@
 {
   "name": "nestjs-wire-contracts-core",
   "version": "0.0.0",
-  "description": "Core contract types and builder for nestjs-wire-contracts, independent of any validation library. Early development placeholder.",
+  "description": "Core contract types and builder for nestjs-wire-contracts, independent of any validation library.",
   "license": "Apache-2.0",
   "author": "elleVas",
   "repository": {
@@ -32,5 +32,8 @@
   "scripts": {
     "build": "tsup",
     "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "26.2.0"
   }
 }
