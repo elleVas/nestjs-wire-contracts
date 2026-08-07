@@ -1,7 +1,7 @@
 {
   "name": "nestjs-wire-contracts-zod",
   "version": "0.0.0",
-  "description": "Zod adapter for nestjs-wire-contracts-core: define contract schemas with Zod for runtime validation and type inference. Early development placeholder.",
+  "description": "Zod adapter for nestjs-wire-contracts-core: define contract schemas with Zod for runtime validation and type inference.",
   "license": "Apache-2.0",
   "author": "elleVas",
   "repository": {
@@ -33,5 +33,9 @@
   "scripts": {
     "build": "tsup",
     "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "nestjs-wire-contracts-core": "workspace:*",
+    "zod": "^4.4.3"
   }
 }
