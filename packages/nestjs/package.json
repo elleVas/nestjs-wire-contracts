@@ -1,7 +1,7 @@
 {
   "name": "nestjs-wire-contracts",
   "version": "0.0.0",
-  "description": "Typed, validated contracts for @nestjs/microservices message patterns (TCP, Redis, NATS, Kafka, RabbitMQ, MQTT). Early development placeholder.",
+  "description": "Typed, validated contracts for @nestjs/microservices message patterns (TCP, Redis, NATS, Kafka, RabbitMQ, MQTT).",
   "license": "Apache-2.0",
   "author": "elleVas",
   "repository": {
@@ -34,5 +34,20 @@
   "scripts": {
     "build": "tsup",
     "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@nestjs/common": "^11.1.28",
+    "@nestjs/microservices": "^11.1.28",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.2"
+  },
+  "dependencies": {
+    "nestjs-wire-contracts-core": "workspace:*"
+  },
+  "peerDependencies": {
+    "@nestjs/common": "^10.0.0 || ^11.0.0",
+    "@nestjs/microservices": "^10.0.0 || ^11.0.0",
+    "reflect-metadata": "^0.1.13 || ^0.2.0",
+    "rxjs": "^7.0.0"
   }
 }
