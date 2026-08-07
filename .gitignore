@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+*.tsbuildinfo
+
+# Package manager
+.pnpm-store/
+
+# Turbo
+.turbo/
+
+# Test coverage
+coverage/
+
+# Env
+.env
+.env.local
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Editor / OS
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# Personal planning notes — not for the public repo
+piano-progetto-typed-nest-contracts.md
