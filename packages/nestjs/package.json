@@ -1,0 +1,21 @@
+{
+  "name": "nestjs-wire-contracts",
+  "version": "0.0.0",
+  "description": "Typed, validated contracts for @nestjs/microservices message patterns (TCP, Redis, NATS, Kafka, RabbitMQ, MQTT). Early development placeholder.",
+  "license": "Apache-2.0",
+  "author": "elleVas",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elleVas/nestjs-wire-contracts.git",
+    "directory": "packages/nestjs"
+  },
+  "homepage": "https://github.com/elleVas/nestjs-wire-contracts",
+  "keywords": [
+    "nestjs",
+    "microservices",
+    "typescript",
+    "zod",
+    "contracts",
+    "message-pattern"
+  ]
+}

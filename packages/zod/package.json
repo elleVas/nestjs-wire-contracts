@@ -1,0 +1,20 @@
+{
+  "name": "nestjs-wire-contracts-zod",
+  "version": "0.0.0",
+  "description": "Zod adapter for nestjs-wire-contracts-core: define contract schemas with Zod for runtime validation and type inference. Early development placeholder.",
+  "license": "Apache-2.0",
+  "author": "elleVas",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elleVas/nestjs-wire-contracts.git",
+    "directory": "packages/zod"
+  },
+  "homepage": "https://github.com/elleVas/nestjs-wire-contracts",
+  "keywords": [
+    "nestjs",
+    "microservices",
+    "typescript",
+    "zod",
+    "contracts"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "nestjs-wire-contracts-core",
+  "version": "0.0.0",
+  "description": "Core contract types and builder for nestjs-wire-contracts, independent of any validation library. Early development placeholder.",
+  "license": "Apache-2.0",
+  "author": "elleVas",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elleVas/nestjs-wire-contracts.git",
+    "directory": "packages/core"
+  },
+  "homepage": "https://github.com/elleVas/nestjs-wire-contracts",
+  "keywords": [
+    "nestjs",
+    "microservices",
+    "typescript",
+    "contracts"
+  ]
+}
