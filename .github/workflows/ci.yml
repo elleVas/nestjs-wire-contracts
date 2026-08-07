@@ -31,11 +31,14 @@ jobs:
       - name: Format check
         run: pnpm format:check
 
+      # Build before typecheck/test: packages resolve sibling workspace
+      # packages (e.g. zod -> core) through their built dist/ output, not
+      # source, so typecheck/test fail on a clean checkout without this.
+      - name: Build
+        run: pnpm build
+
       - name: Typecheck
         run: pnpm typecheck
 
       - name: Test
         run: pnpm test
-
-      - name: Build
-        run: pnpm build
