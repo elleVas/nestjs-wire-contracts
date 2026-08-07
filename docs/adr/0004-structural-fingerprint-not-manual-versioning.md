@@ -4,7 +4,7 @@
 
 ## Context
 
-The original design considered a manually assigned version per contract (a `version` field, bumped by hand to `get_user.v2` on breaking changes). This requires whoever changes a schema to *remember* to bump the version when the change is breaking — exactly the kind of human error this project exists to eliminate. A drift-detection system that depends on human discipline at its most critical point defeats its own purpose.
+The original design considered a manually assigned version per contract (a `version` field, bumped by hand to `get_user.v2` on breaking changes). This requires whoever changes a schema to _remember_ to bump the version when the change is breaking — exactly the kind of human error this project exists to eliminate. A drift-detection system that depends on human discipline at its most critical point defeats its own purpose.
 
 ## Decision
 

@@ -12,9 +12,9 @@ Options considered ranged from a CI-only check, to CI plus a runtime check, to a
 
 Three layers, the first two shipped for v1, the third explicitly deferred:
 
-1. **Build-time (CI).** `contracts.lock.json`, versioned in the *consumer's* repo (next to where it defines its contracts), holds the fingerprint history per pattern. `nestjs-wire-contracts diff <base> <head>` classifies each transition (field removed → breaking, optional field added → compatible, etc.) and fails the PR on an undeclared breaking change.
+1. **Build-time (CI).** `contracts.lock.json`, versioned in the _consumer's_ repo (next to where it defines its contracts), holds the fingerprint history per pattern. `nestjs-wire-contracts diff <base> <head>` classifies each transition (field removed → breaking, optional field added → compatible, etc.) and fails the PR on an undeclared breaking change.
 2. **Runtime.** Every message carries its fingerprint in the envelope (native headers on Kafka/NATS/RabbitMQ; an extended `{ pattern, data, id, meta }` wrapper on TCP). A service accepts its current fingerprint plus a window of previously-declared-compatible ones, and rejects a mismatch immediately with a diagnosable error naming both fingerprints — turning the silent runtime crash this project exists to prevent into a loud, first-contact failure instead.
-3. **Deliberately out of scope for v1: a centralized registry with a `can-i-deploy` gate.** This is the only mechanism that knows what's *actually* deployed where. It's also a genuinely different kind of commitment — hosting, auth, multi-tenancy — that turns the project from a library into a product, and contradicts the positioning in [0001](./0001-explicit-project-name.md)/[0003](./0003-contract-first-wrapping-design.md). Revisit only if the project gets real traction (see the plan's success metrics).
+3. **Deliberately out of scope for v1: a centralized registry with a `can-i-deploy` gate.** This is the only mechanism that knows what's _actually_ deployed where. It's also a genuinely different kind of commitment — hosting, auth, multi-tenancy — that turns the project from a library into a product, and contradicts the positioning in [0001](./0001-explicit-project-name.md)/[0003](./0003-contract-first-wrapping-design.md). Revisit only if the project gets real traction (see the plan's success metrics).
 
 ## Consequences
 

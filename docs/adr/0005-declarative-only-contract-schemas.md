@@ -10,12 +10,12 @@
 
 Payload/response schemas in a wire contract are restricted to a declarative Zod subset:
 
-| Construct | Allowed in a contract? |
-|---|---|
-| Primitives, objects, arrays, enums, literals, unions (incl. discriminated), optional/nullable | Yes |
-| `.min()`, `.max()`, `.email()`, `.regex()`, `.int()`, etc. (Zod's built-in declarative validators) | Yes — compile to clean JSON Schema constraints |
-| `.transform()` | No |
-| `.refine()` / `.superRefine()` | Only when necessary, tracked explicitly (see below) |
+| Construct                                                                                          | Allowed in a contract?                              |
+| -------------------------------------------------------------------------------------------------- | --------------------------------------------------- |
+| Primitives, objects, arrays, enums, literals, unions (incl. discriminated), optional/nullable      | Yes                                                 |
+| `.min()`, `.max()`, `.email()`, `.regex()`, `.int()`, etc. (Zod's built-in declarative validators) | Yes — compile to clean JSON Schema constraints      |
+| `.transform()`                                                                                     | No                                                  |
+| `.refine()` / `.superRefine()`                                                                     | Only when necessary, tracked explicitly (see below) |
 
 Enforcement uses Zod v4's `z.toJSONSchema()`, which throws by default on non-representable constructs (`unrepresentable: "any"` must be opted into explicitly to get the permissive, guessing behavior) — the contract builder in `nestjs-wire-contracts-zod` calls this at contract-definition time, so an unrepresentable schema fails to compile with an error pointing at the offending construct, rather than producing a silently wrong fingerprint.
 
@@ -23,6 +23,6 @@ For `.refine()` calls that are genuinely necessary (cross-field validation, busi
 
 ## Consequences
 
-- The risk on contract *structure* is fully closed, not just reduced — an unrepresentable construct fails to compile.
-- The risk on `.refine()` *semantics* is narrowed to an explicit, small, named surface instead of being an unbounded "anything in Zod" risk, but isn't eliminated — this residual risk is documented publicly (see [0006](./0006-layered-contract-drift-defense.md)), not hidden.
+- The risk on contract _structure_ is fully closed, not just reduced — an unrepresentable construct fails to compile.
+- The risk on `.refine()` _semantics_ is narrowed to an explicit, small, named surface instead of being an unbounded "anything in Zod" risk, but isn't eliminated — this residual risk is documented publicly (see [0006](./0006-layered-contract-drift-defense.md)), not hidden.
 - Adds an authoring constraint contributors need to learn: not everything valid in Zod is valid in a wire contract.
